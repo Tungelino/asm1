@@ -6,7 +6,7 @@ import './staff.css'
 
 function RenderStaff({ data, onClick }) {
     return (
-        <div className='col-lg-2 col-md-4 col-sm-6 '>
+        <div className='col-lg-4 col-md-6  '>
             <div className='staff-name'>
                 <p onClick={() => onClick(data)}>{data.name}</p>
             </div>
@@ -20,6 +20,7 @@ function StaffList() {
         console.log(data.name);
         setInfo(<div >
             <h3>Họ và tên: {data.name}</h3>
+            <img src={data.image} />
             <p>Ngày sinh: {dateFormat(data.doB, "dd/mm/yyyy")}</p>
             <p>Ngày vào công ty: {dateFormat(data.startDate, "dd/mm/yyyy")}</p>
             <p>Phòng ban: {data.department.name}</p>
@@ -39,7 +40,7 @@ function StaffList() {
             ))}
         </div>
         <div className='row'>
-            <div className='info-box'>{info || 'Bấm vào tên để xem thông tin'}</div>
+            <div className='col-lg-4 col-md-6 info-box'  >{info || 'Bấm vào tên để xem thông tin'}</div>
         </div>
     </div>
     )

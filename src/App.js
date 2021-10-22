@@ -12,8 +12,6 @@ function App() {
         </div>
       </Navbar>
       <StaffList />
-      {/* <div >Bấm vào tên để xem thông tin</div> */}
-
     </div>
   )
 }
