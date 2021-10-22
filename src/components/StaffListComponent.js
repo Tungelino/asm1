@@ -17,7 +17,6 @@ function RenderStaff({ data, onClick }) {
 function StaffList() {
     const [info, setInfo] = useState()
     const handleInfo = (data) => {
-        console.log(data.name);
         setInfo(<div >
             <h3>Họ và tên: {data.name}</h3>
             <img src={data.image} />
@@ -28,8 +27,42 @@ function StaffList() {
             <p>Số ngày đã làm thêm: {data.overTime}</p>
         </div>)
     }
+    // const [change6, setChange6] = useState()
+    // const handleChange6 = () => {
+    //     setChange6(
+    //         <div className='col-lg-2'>
+
+    //         </div>
+    //     )
+    // }
+    // const [change3, setChange3] = useState()
+    // const handleChange3 = () => {
+    //     setChange3(
+    //         <div className='col-lg-4'>
+
+    //         </div>
+    //     )
+    // }
+    // const [change2, setChange2] = useState()
+    // const handleChange2 = () => {
+    //     setChange2(
+    //         <div className='col-lg-6'>
+
+    //         </div>
+    //     )
+    // }
 
     return (<div className='container'>
+        <div className='row'>
+            <div className='select-box'>
+                <select class="form-select" aria-label="Default select example">
+                    <option selected>Chọn số cột hiển thị</option>
+                    {/* <option value="1" onChange={handleChange6}>6 cột</option>
+                    <option value="2" onChange={handleChange3}>3 cột</option>
+                    <option value="3" onChange={handleChange2}>2 cột</option> */}
+                </select>
+            </div>
+        </div>
         <div className='row'>
             {STAFFS.map(staff => (
                 <RenderStaff
