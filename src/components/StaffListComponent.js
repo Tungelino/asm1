@@ -20,8 +20,8 @@ function StaffList() {
         console.log(data.name);
         setInfo(<div >
             <h3>Họ và tên: {data.name}</h3>
-            <p>Ngày sinh: {dateFormat(data.doB, "dd/mm/yyyy")}</p>
-            <p>Ngày vào công ty: {dateFormat(data.startDate, "dd/mm/yyyy")}</p>
+            <p>Ngày sinh: {dateFormat(data.doB)}</p>
+            <p>Ngày vào công ty: {dateFormat(data.startDate)}</p>
             <p>Phòng ban: {data.department.name}</p>
             <p>Số ngày nghỉ còn lại: {data.annualLeave}</p>
             <p>Số ngày đã làm thêm: {data.overTime}</p>
