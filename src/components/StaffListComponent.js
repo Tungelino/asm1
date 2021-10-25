@@ -3,10 +3,10 @@ import { DEPARTMENTS, ROLE, STAFFS } from '../shared/staffs'
 import dateFormat from "dateformat"
 import { useState } from "react";
 import './staff.css'
-// const colums = ['col-12 col-md-4', 'col-3']
+// const colums = ['col-md-3', 'col-lg-2','col-md-6']
 
 
-function RenderStaff({ data, onClick }) {
+function RenderStaff({ data, onClick, colum }) {
     return (
         <div className={colum}>
             <div className='staff-name'>
@@ -17,10 +17,13 @@ function RenderStaff({ data, onClick }) {
 }
 function StaffList() {
     const [info, setInfo] = useState()
-    const [colum, setColum] = useState('col-12 col-md-4')
+    const [colum, setColum] = useState('col-md-4 col-12')
 
     const handleChange = () => {
         setColum('col-md-3')
+    }
+    const handleChange6 = () => {
+        setColum('col-md-2')
     }
 
     const handleInfo = (data) => {
@@ -43,16 +46,22 @@ function StaffList() {
                 </div>
             </div>
             <div className='row'>
+                <div className='btn-change'>
+                    <button onClick={handleChange6}>Đổi sang giao diện 6 cột</button>
+                </div>
+            </div>
+            <div className='row'>
                 {STAFFS.map(staff => (
                     <RenderStaff
                         key={staff.id}
                         data={staff}
                         onClick={handleInfo}
+                        colum={colum}
                     />
                 ))}
             </div>
             <div className='row'>
-                <div className='col-12 col-md-4' >{info || 'Bấm vào tên để xem thông tin'}</div>
+                <div  >{info || 'Bấm vào tên để xem thông tin'}</div>
             </div>
         </div>
     )
