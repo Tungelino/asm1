@@ -3,7 +3,8 @@ import { DEPARTMENTS, ROLE, STAFFS } from '../shared/staffs'
 import dateFormat from "dateformat"
 import { useState } from "react";
 import './staff.css'
-// const colums = ['col-md-3', 'col-lg-2','col-md-6']
+const lists = ['col-md-3', 'col-lg-2', 'col-md-6', 'col-lg-12']
+
 
 
 function RenderStaff({ data, onClick, colum }) {
@@ -19,12 +20,8 @@ function StaffList() {
     const [info, setInfo] = useState()
     const [colum, setColum] = useState('col-md-4 col-12')
 
-    const handleChange = () => {
-        setColum('col-md-3')
-    }
-    const handleChange6 = () => {
-        setColum('col-md-2')
-    }
+
+
 
     const handleInfo = (data) => {
         setInfo(<div >
@@ -42,14 +39,16 @@ function StaffList() {
         <div className='container'>
             <div className='row'>
                 <div className='btn-change'>
-                    <button onClick={handleChange}>Đổi sang giao diện 4 cột</button>
+                    {lists.map(list => (
+                        <button
+                            key={list}
+                            onClick={() => setColum(list)}>{list}</button>
+
+
+                    ))}
                 </div>
             </div>
-            <div className='row'>
-                <div className='btn-change'>
-                    <button onClick={handleChange6}>Đổi sang giao diện 6 cột</button>
-                </div>
-            </div>
+
             <div className='row'>
                 {STAFFS.map(staff => (
                     <RenderStaff
