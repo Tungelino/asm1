@@ -3,9 +3,24 @@ import { DEPARTMENTS, ROLE, STAFFS } from '../shared/staffs'
 import dateFormat from "dateformat"
 import { useState } from "react";
 import './staff.css'
-const lists = ['col-md-3', 'col-lg-2', 'col-md-6', 'col-lg-12']
-
-
+const lists = [
+    {
+        name: 'Hiển thị 1 cột',
+        index: 'col-md-12 col-lg-12'
+    },
+    {
+        name: 'Hiển thị 2 cột',
+        index: 'col-md-6 col-lg-6'
+    },
+    {
+        name: 'Hiển thị 4 cột',
+        index: 'col-md-3 col-lg-3'
+    },
+    {
+        name: 'Hiển thị 6 cột',
+        index: 'col-md-2 col-lg-2'
+    }
+]
 
 function RenderStaff({ data, onClick, colum }) {
     return (
@@ -19,9 +34,6 @@ function RenderStaff({ data, onClick, colum }) {
 function StaffList() {
     const [info, setInfo] = useState()
     const [colum, setColum] = useState('col-md-4 col-12')
-
-
-
 
     const handleInfo = (data) => {
         setInfo(<div >
@@ -37,16 +49,13 @@ function StaffList() {
 
     return (
         <div className='container'>
-            <div className='row'>
-                <div className='btn-change'>
-                    {lists.map(list => (
-                        <button
-                            key={list}
-                            onClick={() => setColum(list)}>{list}</button>
 
-
-                    ))}
-                </div>
+            <div className='row' >
+                {lists.map(list => (
+                    <button className='change-btn btn btn-success col-md-3 col-12'
+                        key={list.name}
+                        onClick={() => setColum(list.index)}>{list.name}</button>
+                ))}
             </div>
 
             <div className='row'>
