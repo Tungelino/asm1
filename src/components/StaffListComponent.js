@@ -36,7 +36,7 @@ function StaffList() {
     const [colum, setColum] = useState('col-md-4 col-12')
 
     const handleInfo = (data) => {
-        setInfo(<div >
+        setInfo(<div className='info-box'>
             <h3>Họ và tên: {data.name}</h3>
             <img src={data.image} />
             <p>Ngày sinh: {dateFormat(data.doB, "dd/mm/yyyy")}</p>
