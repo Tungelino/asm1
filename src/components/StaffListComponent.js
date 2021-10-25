@@ -13,7 +13,6 @@ function RenderStaff({ data, onClick }) {
         </div>
     )
 }
-
 function StaffList() {
     const [info, setInfo] = useState()
     const handleInfo = (data) => {
@@ -27,40 +26,21 @@ function StaffList() {
             <p>Số ngày đã làm thêm: {data.overTime}</p>
         </div>)
     }
-    // const [change6, setChange6] = useState()
-    // const handleChange6 = () => {
-    //     setChange6(
-    //         <div className='col-lg-2'>
+    const [changeCol, setChangeCol] = useState()
+    changeCol =
+        { className='col-lg-4 col-md-6' }
 
-    //         </div>
-    //     )
-    // }
-    // const [change3, setChange3] = useState()
-    // const handleChange3 = () => {
-    //     setChange3(
-    //         <div className='col-lg-4'>
 
-    //         </div>
-    //     )
-    // }
-    // const [change2, setChange2] = useState()
-    // const handleChange2 = () => {
-    //     setChange2(
-    //         <div className='col-lg-6'>
-
-    //         </div>
-    //     )
-    // }
-
+    const handleChange = () => {
+        setChangeCol(
+            { className='col-lg-3' }
+        )
+    }
     return (<div className='container'>
         <div className='row'>
-            <div className='select-box'>
-                <select class="form-select" aria-label="Default select example">
-                    <option selected>Chọn số cột hiển thị</option>
-                    {/* <option value="1" onChange={handleChange6}>6 cột</option>
-                    <option value="2" onChange={handleChange3}>3 cột</option>
-                    <option value="3" onChange={handleChange2}>2 cột</option> */}
-                </select>
+            <div className='btn-change'>
+                <button onClick={handleChange}>Đổi sang giao diện 4 cột</button>
+
             </div>
         </div>
         <div className='row'>
@@ -73,7 +53,7 @@ function StaffList() {
             ))}
         </div>
         <div className='row'>
-            <div className='col-lg-4 col-md-6 info-box'  >{info || 'Bấm vào tên để xem thông tin'}</div>
+            <div className='col-lg-4 col-md-6 info-box' >{info || 'Bấm vào tên để xem thông tin'}</div>
         </div>
     </div>
     )
