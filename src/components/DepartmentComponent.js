@@ -12,13 +12,8 @@ const RenderDepartment = ({ department }) => {
                 <br />
             </Card>
         </div>
-
-
     )
-
 }
-
-
 
 function Department(props) {
     return (

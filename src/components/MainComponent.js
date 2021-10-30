@@ -35,7 +35,7 @@ class Main extends Component {
                 />
             )
         }
-        const Pay = () => {
+        const PayUs = () => {
             return (
                 <Pay staffs={this.state.staffs} />
             )
@@ -48,8 +48,8 @@ class Main extends Component {
                     <Route exact path='/staff' component={() => <StaffList staffs={this.state.staffs} />} />
                     <Route path='/staff/:staffId' component={StaffWithId} />
                     <Route path='/department' component={DepartmentUs} />
-                    <Route path='/pay' component={Pay} />
-                    <Redirect to='/pay' />
+                    <Route path='/pay' component={PayUs} />
+                    <Redirect to='/staff' />
                 </Switch>
                 <Footer />
             </div>
