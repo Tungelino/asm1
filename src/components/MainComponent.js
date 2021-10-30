@@ -35,6 +35,11 @@ class Main extends Component {
                 />
             )
         }
+        const Pay = () => {
+            return (
+                <Pay staffs={this.state.staffs} />
+            )
+        }
         return (
             <div className="App">
 

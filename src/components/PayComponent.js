@@ -1,4 +1,4 @@
-function Pay() {
+function Pay(props) {
     return (
         <div>xin chao luong</div>
     )
