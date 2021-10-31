@@ -16,11 +16,8 @@ class Main extends Component {
             staffs: STAFFS,
             departments: DEPARTMENTS
         }
-
     }
-
     render() {
-
         const DepartmentUs = () => {
             return (
                 <Department departments={this.state.departments} />
@@ -35,6 +32,7 @@ class Main extends Component {
                 />
             )
         }
+
         const PayUs = () => {
             return (
                 <Pay staffs={this.state.staffs} />
@@ -42,7 +40,6 @@ class Main extends Component {
         }
         return (
             <div className="App">
-
                 <Header />
                 <Switch>
                     <Route exact path='/staff' component={() => <StaffList staffs={this.state.staffs} />} />
